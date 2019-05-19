@@ -1,3 +1,4 @@
+
 interface Fn {
     (a: string, b: number):void;
 }
@@ -22,6 +23,7 @@ interface Obj {
 let a: Num[] = ['a', 'b'];
 let b: Obj = {'age': 10, 'hobby': 20};
 
+
+
+
 export default {};
-
-
