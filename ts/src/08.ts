@@ -43,6 +43,17 @@ let four: CoustomPerson = {
 };
 
 
+
+//Patameters 官方标准库
+function fn (a: string, b: number): void {
+    //
+}
+// type Param = Parameters<typeof fn>; // [string, number];
+
+type MyParameters<T extends (...args: any[])=>any> = T extends (...args: infer P)=> any ? P : any;
+
+
+
 //追加属性
 type PartialWithNewMember<T> = {
     [P in keyof T] ?: T[P]
