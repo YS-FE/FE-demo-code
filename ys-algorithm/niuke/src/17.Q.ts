@@ -21,7 +21,7 @@ function printCommon<T> (list1: SingleNode<T>, list2: SingleNode<T>): void {
   while (head1 && head2) {
     if (head1.value < head2.value) {
       head1 = head1.next;
-    } else if (head1.value < head2.value){
+    } else if (head1.value > head2.value){
       head2 = head2.next;
     } else {
       str = str + head1.value + ' ';
