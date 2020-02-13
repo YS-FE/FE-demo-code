@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,body {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="file"  width='100%' height='0%' frameborder='1'></iframe>
+  <button onclick="checkFile()">点击查看</button>
+
+  <script>
+    let url = "https://j1.58cdn.com.cn/bicfe/test/office/test_excel.xlsx";
+
+    function checkFile () {
+      // 直接使用Microsoft的接口即可
+      // 文档: https://www.microsoft.com/en-us/microsoft-365/blog/2013/04/10/office-web-viewer-view-office-documents-in-a-browser/?eu=true
+      let iframe = document.getElementById('file');
+      iframe.src = "https://view.officeapps.live.com/op/view.aspx?src=" + url;
+      iframe.onload = function () {
+        iframe.style.height = "100%";
+      }
+    }
+  </script>
+  
+</body>
+</html>
