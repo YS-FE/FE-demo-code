@@ -24,7 +24,7 @@ let objTest: Obj = {
 
 
 
-function getProperty<T, K extends keyof T>(obj: T, key: K) {
+function getProperty<T, K extends keyof T>({ obj, key }: { obj: T; key: K; }) {
     return obj[key];  // Inferred type is T[K]
 }
 
@@ -34,8 +34,8 @@ function setProperty<T, K extends keyof T>(obj: T, key: K, value: T[K]) {
 
 let x = { foo: 10, bar: "hello!" };
 
-let foo = getProperty(x, "foo"); // number
-let bar = getProperty(x, "bar"); // string
+let foo = getProperty({ obj: x, key: "foo" }); // number
+let bar = getProperty({ obj: x, key: "bar" }); // string
 
 // let oops = getProperty(x, "wargarbl"); // Error! "wargarbl" is not "foo" | "bar"
 // setProperty(x, "foo", "string"); // Error!, string expected number
