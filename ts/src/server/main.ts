@@ -10,7 +10,7 @@ const router = new Router();
 
 app.use(async (ctx: Koa.BaseContext, next: Koa.Next) => {
   console.log('middleware...');
-  next();
+  await next();
 });
 
 
